@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Sparkles, Brain, Trash2 } from "lucide-react
 import toast from "react-hot-toast";
 import moment from "moment";
 
-import flashcardService from "../../services/flashcardService";
+import flashcardService from "@/services/flashcardService";
 import Spinner from "../common/Spinner";
 import Flashcard from "./Flashcard";
 

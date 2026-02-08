@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import toast from "react-hot-toast";
 
-import flashcardService from "../../services/flashcardService";
-import aiService from "../../services/aiService";
+import flashcardService from "@/services/flashcardService";
+import aiService from "@/services/aiService";
 
 import Spinner from "../../components/common/Spinner";
 import EmptyState from "../../components/common/EmptyState";
