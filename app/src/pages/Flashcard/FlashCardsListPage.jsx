@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import flashcardService from "../../../services/flashcardService";
 import Spinner from "../../components/common/Spinner";
 import EmptyState from "../../components/common/EmptyState";
@@ -13,7 +13,7 @@ const FlashcardsListPage = () => {
   const fetchFlashcards = useCallback(async () => {
     try {
       setLoading(true);
-      const data = await flashcardService.getAllFlashcards();
+      const data = await flashcardService.getAllFlashcardSets(); // ✅ FIX
       setFlashcards(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error(error);
@@ -28,7 +28,6 @@ const FlashcardsListPage = () => {
   }, [fetchFlashcards]);
 
   const handleToggleStar = async (id) => {
-    // optional API call
     setFlashcards((prev) =>
       prev.map((card) =>
         card._id === id
