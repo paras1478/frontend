@@ -90,7 +90,6 @@ const pdfUrl = `http://localhost:8000${document.filePath}`;
         pdfUrl={pdfUrl}
       />
 
-      {/* TAB CONTENT */}
       {activeTabContent}
     </div>
   );

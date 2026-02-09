@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import flashcardService from "@/services/flashcardService";
+import flashcardService from "@/services/flashCardService";
 import Spinner from "../../components/common/Spinner";
 import EmptyState from "../../components/common/EmptyState";
 import toast from "react-hot-toast";
@@ -9,11 +9,10 @@ const FlashcardsListPage = () => {
   const [flashcards, setFlashcards] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  /* ================= FETCH ================= */
   const fetchFlashcards = useCallback(async () => {
     try {
       setLoading(true);
-      const data = await flashcardService.getAllFlashcardSets(); // ✅ FIX
+      const data = await flashcardService.getAllFlashcardSets(); 
       setFlashcards(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error(error);

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
 
-import flashcardService from "@/services/flashcardService";
+import flashcardService from "@/services/flashCardService";
 
 import Spinner from "../../components/common/Spinner";
 import EmptyState from "../../components/common/EmptyState";
@@ -20,7 +20,6 @@ const FlashcardPage = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  /* ================= FETCH ================= */
   const fetchFlashcards = async () => {
     try {
       setLoading(true);
@@ -37,7 +36,6 @@ const FlashcardPage = () => {
     fetchFlashcards();
   }, [documentId]);
 
-  /* ================= GENERATE ================= */
   const handleGenerateFlashcards = async () => {
     try {
       setGenerating(true);
@@ -51,7 +49,6 @@ const FlashcardPage = () => {
     }
   };
 
-  /* ================= STAR ================= */
   const handleToggleStar = async (cardId) => {
     try {
       await flashcardService.toggleStar(cardId);
@@ -65,7 +62,6 @@ const FlashcardPage = () => {
     }
   };
 
-  /* ================= DELETE ================= */
   const handleDeleteSet = async () => {
     try {
       await flashcardService.deleteFlashcardSet(documentId);
